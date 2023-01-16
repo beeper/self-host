@@ -1,0 +1,87 @@
+---
+    # The bare domain name which represents your Matrix identity.
+    # Matrix user ids for your server will be of the form (`@user:<matrix-domain>`).
+    #
+    # Note: this playbook does not touch the server referenced here.
+    # Installation happens on another server ("matrix.<matrix-domain>").
+    #
+    # If you've deployed using the wrong domain, you'll have to run the Uninstalling step,
+    # because you can't change the Domain after deployment.
+    #
+    # Example value: example.com
+    matrix_domain: <insert_domain>
+    
+    # The Matrix homeserver software to install.
+    # See:
+    #  - `roles/custom/matrix-base/defaults/main.yml` for valid options
+    # - the `docs/configuring-playbook-IMPLEMENTATION_NAME.md` documentation page, if one is available for your implementation choice
+    matrix_homeserver_implementation: synapse
+    
+    # A secret used as a base, for generating various other secrets.
+    # You can put any string here, but generating a strong one is preferred (e.g. `pwgen -s 64 1`).
+    matrix_homeserver_generic_secret_key: '<create_secretkey>'
+
+
+    # Disable installing Element
+    matrix_client_element_enabled: false
+    
+    # This is something which is provided to Let's Encrypt when retrieving SSL certificates for domains.
+    #
+    # In case SSL renewal fails at some point, you'll also get an email notification there.
+    #
+    # If you decide to use another method for managing SSL certificates (different than the default Let's Encrypt),
+    # you won't be required to define this variable (see `docs/configuring-playbook-ssl-certificates.md`).
+    #
+    # Example value: someone@example.com
+    matrix_ssl_lets_encrypt_support_email: '<insert_email>'
+    
+    # A Postgres password to use for the superuser Postgres user (called `matrix` by default).
+    #
+    # The playbook creates additional Postgres users and databases (one for each enabled service)
+    # using this superuser account.
+    devture_postgres_connection_password: '<create_secretkey>'
+    
+    matrix_synapse_ext_password_provider_shared_secret_auth_enabled: true
+    # matrix_synapse_ext_password_provider_shared_secret_auth_shared_secret: YOUR_SHARED_SECRET_GOES_HERE
+    matrix_synapse_ext_password_provider_shared_secret_auth_shared_secret: <create_secretkey>
+    
+    # Discord
+    matrix_mautrix_discord_enabled: true
+    
+    # Telegram
+    # You'll need to obtain API keys from https://my.telegram.org/apps and then enter the details below
+    # matrix_mautrix_telegram_enabled: true
+    # matrix_mautrix_telegram_api_id: YOUR_TELEGRAM_APP_ID
+    # matrix_mautrix_telegram_api_hash: YOUR_TELEGRAM_API_HASH
+    
+    # WhatsApp
+    matrix_mautrix_whatsapp_enabled: true
+    matrix_synapse_configuration_extension_yaml: |
+      experimental_features:
+        msc2716_enabled: true
+    matrix_mautrix_whatsapp_configuration_extension_yaml:
+      bridge:
+        history_sync:
+          backfill: true
+    
+    # Facebook Messenger
+    matrix_mautrix_facebook_enabled: true
+    
+    # Google Chat
+    matrix_mautrix_googlechat_enabled: true
+    
+    # Instagram 
+    matrix_mautrix_instagram_enabled: true
+    
+    # Twitter
+    matrix_mautrix_twitter_enabled: true
+    
+    # Signal
+    matrix_mautrix_signal_enabled: true
+    
+    # Linkedin
+    matrix_beeper_linkedin_enabled: true
+    
+    # IRC
+    matrix_heisenbridge_enabled: true
+    

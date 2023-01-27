@@ -147,9 +147,8 @@ Self hosting Beeper is possible, but not an easy task right now. It requires exp
     3. Repeat Step 16 for each bridge you would like to configure (eg `@instagrambot:<your_domain>`)
     4. Great! Now all your bridges are set up
 17. Set up mobile apps
-Android - [SchildiChat](https://play.google.com/store/apps/details?id=de.spiritcroc.riotx)
-    
-    iOS - Recommended apps: [Element](https://apps.apple.com/us/app/element-messenger/id1083446067) or [FluffyChat](https://apps.apple.com/us/app/fluffychat/id1551469600?platform=iphone) 
+- Android - [SchildiChat](https://play.google.com/store/apps/details?id=de.spiritcroc.riotx)
+- iOS - Recommended apps: [Element](https://apps.apple.com/us/app/element-messenger/id1083446067) or [FluffyChat](https://apps.apple.com/us/app/fluffychat/id1551469600?platform=iphone) 
     
 18. Advanced and optional! Enable federation
 - Add a root `A record` to your DNS pointing at your Droplet IP

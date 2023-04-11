@@ -29,7 +29,7 @@ Our infrastructure stack is composed of:
 
 **Matrix Homeserver**
 
-- [Synapse](github.com/matrix-org/synapse)
+- [Synapse](https://github.com/matrix-org/synapse)
 
 
 *********Open Source, Beeper-maintained Matrix bridges*********

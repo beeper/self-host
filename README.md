@@ -96,7 +96,7 @@ Self hosting Beeper is possible, but not an easy task right now. It requires exp
 8. `cp vars.yml inventory/host_vars/matrix.<insert_domain>/vars.yml`
 9.  open`inventory/host_vars/matrix.<insert_domain>/vars.yml` in a text editor
     1. Insert your `<insert_domain>` in line 12
-    2. Enter a real email address in line 36
+    2. Enter a real email address in line 27 and 40
     3. Wherever `<create_secretkey>` shows up (eg line 22), switch back to your terminal, run `pwgen -s 64 1` and insert that key into the file
     4. Disable any bridges you do not want (saves RAM!) or enable Telegram by following instructions on Line 52
     5. Save the file.

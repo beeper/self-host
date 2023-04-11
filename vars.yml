@@ -21,6 +21,10 @@
     # You can put any string here, but generating a strong one is preferred (e.g. `pwgen -s 64 1`).
     matrix_homeserver_generic_secret_key: '<create_secretkey>'
 
+    # Specify reverse proxy
+    # insert your email address
+    matrix_playbook_reverse_proxy_type: playbook-managed-traefik
+    devture_traefik_config_certificatesResolvers_acme_email: YOUR_EMAIL_ADDRESS 
 
     # Disable installing Element
     matrix_client_element_enabled: false

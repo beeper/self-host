@@ -102,7 +102,7 @@ Self hosting Beeper is possible, but not an easy task right now. It requires exp
     5. Save the file.
 10. `cp examples/hosts inventory/hosts`
 11. Open `inventory/hosts` in a text editor
-    1. Replae `<your_domain>` with your domain
+    1. Replace `<your_domain>` with your domain
     2. Replace `your-server's external IP address>` with Droplet IP
     3. Save
 12. Install docker and make sure it is started

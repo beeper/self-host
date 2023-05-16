@@ -104,14 +104,18 @@ Self hosting Beeper is possible, but not an easy task right now. It requires exp
 11. Open `inventory/hosts` in a text editor
     1. Replace `<your_domain>` with your domain
     2. Replace `your-server's external IP address>` with Droplet IP
-    3. Save
+    3. add the following to the hosts file: `ansible_connection=community.docker.nsenter`. The hosts file shold now look like this:
+   ```
+   [matrix_servers]
+    matrix.YOUR.DOMAIN ansible_host=YOUR_SERVERS_IP ansible_connection=local ansible_ssh_user=root ansible_connection=community.docker.nsenter
+   ```
 12. Install docker and make sure it is started
     
     Mac OS - Follow instructions [https://docs.docker.com/desktop/install/mac-install](https://docs.docker.com/desktop/install/mac-install) 
     
     Linux - Follow instructions [https://docs.docker.com/desktop/install/linux-install/#generic-installation-steps](https://docs.docker.com/desktop/install/linux-install/#generic-installation-steps)
     
-13. Run Ansible in docker from the `/matrix-docker-ansible-deploy` directory
+13. Run Ansible in docker from the `/matrix-docker-ansible-deploy` directory. If this doesn't work, check the [playbook instructions](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/ansible.md#using-ansible-via-docker).
     
     ```bash
     docker run -it --rm \

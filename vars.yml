@@ -25,6 +25,8 @@
     # insert your email address
     matrix_playbook_reverse_proxy_type: playbook-managed-traefik
     devture_traefik_config_certificatesResolvers_acme_email: YOUR_EMAIL_ADDRESS 
+    
+    matrix_playbook_docker_installation_enabled: false
 
     # Disable installing Element
     matrix_client_element_enabled: false

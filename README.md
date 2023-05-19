@@ -47,7 +47,7 @@ Our infrastructure stack is composed of:
 | [fair/kakaotalk](https://src.miscworks.net/fair/matrix-appservice-kakaotalk.git) | [fair/line](https://src.miscworks.net/fair/matrix-puppeteer-line.git) |
 | --- | --- |
 
-What is a Matrix bridge? [Learn more](www.beeper.com/new-faqs/what-is-a-bridge)
+What is a Matrix bridge? [Learn more](https://www.beeper.com/faq#what-is-a-bridge)
 
 
 ## Self-Host Install Guide

@@ -124,6 +124,7 @@ Self hosting Beeper is possible, but not an easy task right now. It requires exp
     --entrypoint=/bin/sh \
     docker.io/devture/ansible:2.13.6-r0-1
     ```
+    If you use a key type other than RSA, or for any other reason your key file is located elsewhere, you will need to change the above command to point to the correct key.
     
 14. Your terminal should now show `/work`, then issue these commands
     1. `git config --global --add safe.directory /work`

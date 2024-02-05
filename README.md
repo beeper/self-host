@@ -1,10 +1,11 @@
-# Self-Host Beeper
+# This guide is obselete, please use [bridge-manager](https://github.com/beeper/bridge-manager) 
+We've made selt-hosting Beeper bridges infinitely easier! We recommend using our new tool [bridge-manager](https://github.com/beeper/bridge-manager) rather than this old method.
 
-![image](https://user-images.githubusercontent.com/1048265/215031408-dc1a7ed0-e119-4d87-a91d-18ceae44f49a.png)
+
+---------
 
 
-### Beeper is a universal chat app. It’s a single app to chat with friends on 15 different chat networks. Learn more on [beeper.com](http://beeper.com).
- ---
+## (deprecated) Self-Host Beeper
 
 If you're just looking to install Beeper, you can get it [here](http://beeper.com). If you're a developer wanting to contribute or if you want to self-host Beeper on your own infrastructure, read on.
 

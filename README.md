@@ -67,7 +67,7 @@ Self hosting Beeper is possible, but not an easy task right now. It requires exp
 </aside>
 
 1. **Purchase a domain**
-    1. We recommend Google Domains
+    1. We recommend [Cloudflare](https://www.cloudflare.com/en-gb/products/registrar/)
     2. Insert this domain (eg `selfhostbeeper.com`) wherever `<insert_domain>` is shown in these instructions.
 2. **Select a hosting provider**
     1. We recommend a 2GB RAM 50GB disk Digital Ocean Droplet

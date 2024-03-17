@@ -104,11 +104,10 @@ Self hosting Beeper is possible, but not an easy task right now. It requires exp
 10. `cp examples/hosts inventory/hosts`
 11. Open `inventory/hosts` in a text editor
     1. Replace `<your_domain>` with your domain
-    2. Replace `your-server's external IP address>` with Droplet IP
-    3. add the following to the hosts file: `ansible_connection=community.docker.nsenter`. The hosts file shold now look like this:
+    2. Replace `your-server's external IP address>` with Droplet IP. The hosts file shold now look like this:
    ```
    [matrix_servers]
-    matrix.YOUR.DOMAIN ansible_host=YOUR_SERVERS_IP ansible_connection=local ansible_ssh_user=root ansible_connection=community.docker.nsenter
+    matrix.YOUR.DOMAIN ansible_host=YOUR_SERVERS_IP ansible_ssh_user=root
    ```
 12. Install docker and make sure it is started
     
@@ -126,6 +125,7 @@ Self hosting Beeper is possible, but not an easy task right now. It requires exp
     --entrypoint=/bin/sh \
     docker.io/devture/ansible:2.13.6-r0-1
     ```
+    If you use a key type other than RSA, or for any other reason your key file is located elsewhere, you will need to change the above command to point to the correct key.
     
 14. Your terminal should now show `/work`, then issue these commands
     1. `git config --global --add safe.directory /work`
@@ -133,16 +133,14 @@ Self hosting Beeper is possible, but not an easy task right now. It requires exp
     3. `ansible-playbook -i inventory/hosts setup.yml --tags=install-all,ensure-matrix-users-created,start`
     4. Your server is now installed! Check that everything is working `ansible-playbook -i inventory/hosts setup.yml --tags=self-check`
         1. ignore the errors about federation
-    - Additional configuration [https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook.md#other-configuration-options](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook.md#other-configuration-options)
-    - Note that if you remove components from `vars.yml`, or if we switch some component from being installed by default to not being installed by default anymore, you'd need to run the setup command with `--tags=setup-all` instead of `--tags=install-all`. See [Playbook tags introduction](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/installing.md#playbook-tags-introduction)****
-    
-    e. Create your user account, change the command to include your preferred username (`<insert_username`) and password (`<your_password>`). 
-    
-    `ansible-playbook -i inventory/hosts setup.yml --extra-vars='username=<insert_username> password=<your_password> admin=yes' --tags=register-user`
+    5. Additional configuration [https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook.md#other-configuration-options](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook.md#other-configuration-options)
+    6. Note that if you remove components from `vars.yml`, or if we switch some component from being installed by default to not being installed by default anymore, you'd need to run the setup command with `--tags=setup-all` instead of `--tags=install-all`. See [Playbook tags introduction](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/installing.md#playbook-tags-introduction)****
+    7. Create your user account, change the command to include your preferred username (`<insert_username`) and password (`<your_password>`).  
+      `ansible-playbook -i inventory/hosts setup.yml --extra-vars='username=<insert_username> password=<your_password> admin=yes' --tags=register-user`
     
 15. In a browser, open our recommended Matrix client, [https://app.schildi.chat/#/login](https://app.schildi.chat/#/login) 
     1. Click ‘Edit’ and `https://matrix.<your_domain>` into the homeserver field, eg `https://matrix.beeptest.org` then click Continue
-    2. Sign in with your username/password created in step 14e
+    2. Sign in with your username/password created in step 14.vii
 16. Set up each bridge
 
     ![CleanShot 2023-01-26 at 23 08 40](https://user-images.githubusercontent.com/1048265/215031550-61f92954-6936-42af-bb4b-a8165e17389e.gif)
